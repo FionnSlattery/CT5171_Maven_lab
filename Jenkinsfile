@@ -14,10 +14,16 @@ pipeline{
             }
         }
         
-        stage('Exec'){
+        stage('Package'){
             steps{
-                sh 'mvn exec:java'
+                sh 'mvn package'
             }
+        }
+    }
+    post {
+        success {
+            archiveArtifacts allowEmptyArchive: true,
+                artifacts: '**/first_maven*.jar'
         }
     }
 }
