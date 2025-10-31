@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("GetProject"){
             steps {
-                git branch:'main', url:'https://github.com/Chadlikouider/CT5171_testmaven.git'
+                git branch:'main', url:'https://github.com/FionnSlattery/CT5171_Maven_lab.git'
             }
         }
         stage('build'){
